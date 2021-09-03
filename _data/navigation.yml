@@ -9,6 +9,27 @@
 
 # English (default)
 # -----------------
+zh: &DEFAULT_ZH
+  nav:
+    - title: "服务"
+      section: services
+    - title: "产品"
+      section: portfolio
+    - title: "关于"
+      section: about
+    - title: "里程碑"
+      section: timeline
+    - title: "团队"
+      section: team
+    - title: "联系我们"
+      section: contact
+zh-CN:
+  <<: *DEFAULT_ZH
+zh-TW:
+  <<: *DEFAULT_ZH
+zh-HK:
+  <<: *DEFAULT_ZH
+
 en: &DEFAULT_EN
   nav:
     - title: "Services"
@@ -23,8 +44,6 @@ en: &DEFAULT_EN
       section: team
     - title: "Contact"
       section: contact
-    - title: "Theme Source"
-      url: https://github.com/raviriley/agency-jekyll-theme/
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -50,8 +69,6 @@ es: &DEFAULT_ES
       section: equipo
     - title: "Contáctenos"
       section: contacto
-    - title: "Fuente de la plantilla"
-      url: https://github.com/raviriley/agency-jekyll-theme/
 es-ES:
   <<: *DEFAULT_ES
 es-CO:

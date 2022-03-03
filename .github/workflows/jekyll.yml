@@ -23,7 +23,7 @@ jobs:
       uses: nevermin/deploy-aliyun-oss@main
       with:
         # aliyun config
-        region: oss-cn-hongkong.aliyuncs.com
+        region: oss-cn-hongkong
         access-key-id: ${{ secrets.ACCESS_KEY_ID }}
         access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
         bucket: ${{ secrets.BUCKET }}

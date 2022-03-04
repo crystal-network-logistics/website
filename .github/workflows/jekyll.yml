@@ -28,6 +28,7 @@ jobs:
         access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
         bucket: ${{ secrets.BUCKET }}
         secure: true
+        maxSockets: 3
         # deploy config
         entry: _site/**/* # glob pattern
         remote-dir: /

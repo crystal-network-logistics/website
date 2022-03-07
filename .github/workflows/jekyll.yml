@@ -12,10 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - name: Get website code
+      env:
+        ssh-key: ${{ SSH_KEY }}
+      run: |
+        mkdir -p $HOME/.ssh
+        echo "$ssh-key" > $HOME/.ssh/ssh.key
+        chmod 600 $HOME/.ssh/ssh.key
+        export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/
+        git submodule update --init --recursive 
+
     - name: Build the site in the jekyll/builder container
-      with:
-        ssh-key: ${{ secrets.SSH_KEY }}
     - run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \

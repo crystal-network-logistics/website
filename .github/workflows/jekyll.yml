@@ -19,18 +19,13 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
-    - name: Deploy OSS
-      uses: nevermin/deploy-aliyun-oss@main
+    - name: upload files to OSS
+      uses: nevermin/aliyun-oss-website-action@v1
       with:
-        # aliyun config
-        region: oss-cn-hongkong
-        access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-        access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+        accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
+        accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
         bucket: ${{ secrets.BUCKET }}
-        secure: true
-        max-sockets: 3
-        # deploy config
-        entry: _site/**/* # glob pattern
-        remote-dir: /
-        path-rewrite: ^_site/
+        # use your own endpoint
+        endpoint: oss-cn-hongkong.aliyuncs.com
+        folder: /_site/
 

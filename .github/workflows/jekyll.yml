@@ -22,7 +22,6 @@ jobs:
         chmod 600 $HOME/.ssh/ssh.key
         export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/
         git submodule update --init --recursive 
-
     - name: Build the site in the jekyll/builder container
     - run: |
         docker run \

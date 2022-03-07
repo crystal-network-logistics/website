@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ssh-key: ${{ SSH_KEY }}
+        ssh-key: ${{ secrets.SSH_KEY }}
     - run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \

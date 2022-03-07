@@ -27,5 +27,5 @@ jobs:
         bucket: ${{ secrets.BUCKET }}
         # use your own endpoint
         endpoint: oss-cn-hongkong.aliyuncs.com
-        folder: /_site/
+        folder: ./_site/
 

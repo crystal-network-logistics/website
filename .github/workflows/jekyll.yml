@@ -16,7 +16,7 @@ jobs:
     - name: Get website code
       env:
         ssh-key: ${{ SSH_KEY }}
-      run: |
+    - run: |
         mkdir -p $HOME/.ssh
         echo "$ssh-key" > $HOME/.ssh/ssh.key
         chmod 600 $HOME/.ssh/ssh.key

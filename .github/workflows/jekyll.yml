@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Get website code
       with:
         ssh-key: ${{ SSH_KEY }}
     - name: Build the site in the jekyll/builder container

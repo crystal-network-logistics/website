@@ -15,7 +15,6 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ssh-key: ${{ SSH_KEY }}
-    - name: Build the site in the jekyll/builder container
     - run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \

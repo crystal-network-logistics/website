@@ -16,12 +16,6 @@ jobs:
     - name: Get website code
       with:
         ssh-key: ${{ SSH_KEY }}
-    - run: |
-        mkdir -p $HOME/.ssh
-        echo "$ssh-key" > $HOME/.ssh/ssh.key
-        chmod 600 $HOME/.ssh/ssh.key
-        export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/
-        git submodule update --init --recursive 
     - name: Build the site in the jekyll/builder container
     - run: |
         docker run \
